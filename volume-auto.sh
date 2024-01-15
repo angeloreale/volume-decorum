@@ -4,13 +4,13 @@ HOUR=$((HOURstr + 0))
 echo $HOUR
 
 case $((
-  ($HOUR >= 22 && $HOUR < 23)   * 1 +
-  ($HOUR >= 0 && $HOUR < 5)  * 2 +
-  ($HOUR >= 6 && $HOUR < 7) * 3 +
+  ($HOUR >= 22 && $HOUR <= 23)   * 1 +
+  ($HOUR >= 0 && $HOUR <= 5)  * 2 +
+  ($HOUR >= 6 && $HOUR <= 7) * 3 +
   ($HOUR == 8) * 4 +
   ($HOUR == 9) * 5 +
-  ($HOUR >= 10 && $HOUR < 12) * 6 +
-  ($HOUR >= 13 && $HOUR < 15) * 7 +
+  ($HOUR >= 10 && $HOUR <= 12) * 6 +
+  ($HOUR >= 13 && $HOUR <= 15) * 7 +
   ($HOUR >= 16 && $HOUR <= 21) * 8))
 	in
   (1) echo "setting to 30" && osascript -e "set volume output volume 30";;
